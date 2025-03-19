@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>China's Birthday</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+        
+        /* Ajustes generales */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            font-family: 'Libre Baskerville', serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #87CEEB, #4682B4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 100%;
+            max-width: 430px; /* Tamaño del iPhone 16 Pro */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: 4em;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 5px #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 2em;
+            color: #FFE4B5;
+            margin-bottom: 5px;
+        }
+
+        .date-time {
+            font-size: 1.8em;
+            color: #FFFACD;
+        }
+
+        .tagline {
+            font-size: 2.5em;
+            font-style: italic;
+            color: #FFFAF0;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos de botones */
+        .buttons a {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #4169E1;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 320px;
+            text-align: center;
+        }
+
+        .buttons a:hover {
+            background-color: #191970;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">China's Birthday</div>
+        <div class="subtitle">Saturday, March 29th</div>
+        <div class="date-time">11:00 PM</div>
+        <div class="tagline">Here we go again...</div>
+
+        <div class="buttons">
+            <a href="#" id="play-music">Press for Music & Magic!</a>
+            <a href="event.ics" download="ChinasBirthday.ics">Add to Calendar</a>
+            <a href="https://maps.apple.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Apple Maps</a>
+            <a href="https://maps.google.com/?q=Per%C3%BA%20979,%20B1641%20Acassuso,%20Provincia%20de%20Buenos%20Aires" target="_blank">Google Maps</a>
+        </div>
+
+        <audio id="birthday-audio" loop>
+            <source src="ABBA.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        document.getElementById('play-music').addEventListener('click', function() {
+            const audio = document.getElementById('birthday-audio');
+            audio.play().catch(error => console.log('Autoplay blocked:', error));
+        });
+    </script>
+</body>
+</html>
